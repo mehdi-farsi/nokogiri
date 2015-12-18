@@ -204,6 +204,8 @@ public class ParserContext extends RubyObject {
      */
     public void setInputSource(InputStream stream) {
         source = new InputSource(stream);
+        // TODO: this fixes encoding errors in nekohtml, but probably isn't the right solution
+        source.setEncoding("UTF-8");
     }
 
     /**
